@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Floricultura internacional: Colombia vs. Chile (2025)</title>
+<style>
+:root{--bg:#f6f8fb;--sf:#fff;--tx:#17222f;--mu:#566475;--navy:#12304f;--ln:#d9e0e8;--col:#d4920a;--chl:#7a3fa0;--pos:#1b7f3b;--neg:#b42318;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1621;--sf:#16212e;--tx:#e8eef5;--mu:#9fb0c3;--navy:#9cc3ee;--ln:#2a3a4d;--col:#f0b429;--chl:#c28ae6;--pos:#4cc38a;--neg:#ff8a80}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Georgia,"Times New Roman",serif}
+h1,h2,h3,.sans,button,select,th,label,.kpi small{font-family:"Segoe UI",Helvetica,Arial,sans-serif}
+header{background:#12304f;color:#fff;padding:28px 20px}
+header h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.2rem)}header p{margin:0;max-width:75ch;color:#d5e2f0}
+main{max-width:1100px;margin:0 auto;padding:16px}
+section{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:20px;margin:16px 0}
+h2{color:var(--navy);margin:0 0 10px;font-size:1.3rem}h3{margin:16px 0 6px;font-size:1rem;color:var(--navy)}
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:end;position:sticky;top:env(safe-area-inset-top,0px);background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:12px 16px;z-index:5}
+label{font-size:.85rem;color:var(--mu);display:flex;flex-direction:column;gap:3px}
+select,button{font-size:.9rem;padding:7px 10px;border:1px solid var(--ln);border-radius:6px;background:var(--sf);color:var(--tx)}
+button{background:var(--navy);color:#fff;cursor:pointer;border-color:var(--navy)}
+:focus-visible{outline:3px solid #3b82f6;outline-offset:2px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.kpi{border:1px solid var(--ln);border-left:6px solid var(--c);border-radius:6px;padding:12px}
+.kpi b{display:block;font-size:1.5rem;font-family:"Segoe UI",Arial,sans-serif}.kpi small{color:var(--mu)}
+.note{background:rgba(212,146,10,.12);border-left:4px solid var(--col);padding:10px 14px;margin:10px 0;font-size:.93rem}
+.bar{display:grid;grid-template-columns:90px 1fr;gap:8px;align-items:center;margin:6px 0;font:.9rem "Segoe UI",Arial,sans-serif}
+.track{background:var(--bg);border-radius:4px;height:26px;display:flex;overflow:hidden;position:relative}
+.fill{height:100%;min-width:3px;display:flex;align-items:center;padding-left:6px;color:#fff;font-size:.78rem;white-space:nowrap}
+.rest{background:repeating-linear-gradient(45deg,#9aa7b5,#9aa7b5 6px,#b6c0cb 6px,#b6c0cb 12px);color:#1b2530}
+.vl{margin-left:8px;white-space:nowrap;color:var(--tx);font-size:.82rem;align-self:center}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font:.85rem "Segoe UI",Arial,sans-serif;min-width:760px}
+th,td{border-bottom:1px solid var(--ln);padding:6px 8px;text-align:left;vertical-align:top}th{cursor:pointer;background:var(--bg);color:var(--navy)}
+a{color:#1d5fa8}.tag{font-size:.75rem;padding:1px 6px;border-radius:10px;border:1px solid var(--navy)}
+.cl{border-left:4px solid var(--c);padding-left:6px}
+@media(max-width:560px){.bar{grid-template-columns:1fr}}
+.rings{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-around}.mapw{overflow-x:auto}.mapw svg{width:100%;min-width:560px;height:auto;background:var(--bg);border-radius:6px}
+[data-tip]{cursor:pointer}textarea{width:100%;min-height:90px;font:.85rem monospace;border:1px solid var(--ln);border-radius:6px;padding:8px;background:var(--sf);color:var(--tx)}
+.ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-bottom:8px}.ctl label.row{flex-direction:row;align-items:center;gap:6px}
+</style></head><body>
+<header><h1>Floricultura internacional: Colombia vs. Chile</h1>
+<p>Evolución del comercio de flores y capullos cortados (HS 0603), 2004–2025. Fuente: UN Comtrade Plus. Fecha de consulta: no especificada en el archivo.</p></header>
+<main>
+<div class="filters" role="search" aria-label="Filtros"><label>País<select id="fc"><option value="">Ambos</option><option>Colombia</option><option>Chile</option></select></label><button id="rs">Restablecer filtros</button></div>
+
+<section id="hist"><h2>Evolución 2004–2025 (HS 0603)</h2>
+<div class="note"><b>Cobertura:</b> HS 0603, Colombia y Chile. Años bienales 2004–2024 y 2025. Exportaciones FOB, importaciones CIF: el saldo es aproximado.</div>
+<div class="ctl"><label>Indicador<select id="hi"></select></label><label>Desde<select id="y0"></select></label><label>Hasta<select id="y1"></select></label><label class="row"><input type="checkbox" id="hl" checked> Escala logarítmica (no aplica al saldo)</label><label class="row"><input type="checkbox" id="ha"> Tabla con todos los indicadores</label></div>
+<h3 id="t1"></h3><div class="lg" id="lg1"></div><div id="hc1"></div><p class="sans" id="hsum" style="font-size:.9rem"></p>
+<h3>Exportaciones vs. importaciones (valor, miles de USD; importaciones en línea punteada)</h3><div class="lg" id="lg2"></div><div id="hc2"></div>
+<h3>Variación frente a la observación anterior</h3><div class="ctl"><label>Indicador<select id="hv"></select></label></div><div class="lg" id="lg3"></div><div id="hc3"></div><p class="sans" style="font-size:.82rem;color:var(--mu)">Cada barra compara un año con la observación anterior de la serie: 2006→2008 abarca dos años y 2024→2025 uno, por lo que las barras no son comparables como tasas anuales. ▲ aumento (verde), ▼ disminución (rojo). Muestra cambios, no sus causas.</p>
+<p id="hd" class="note">Seleccione un punto para ver su detalle y fuente. Pulse un nombre de la leyenda para ocultar o mostrar esa serie.</p>
+<h3>Cómo interpretar</h3><ul><li><b>Observación:</b> compare niveles y cambios entre años del mismo indicador y país.</li><li><b>Hipótesis, no conclusión:</b> factores como la demanda externa, los costos, el tipo de cambio o las políticas comerciales pueden influir, pero esta serie no los mide ni prueba causalidad.</li><li>Saldo y razón exportaciones/importaciones son cálculos propios a partir de valores FOB y CIF del archivo.</li></ul>
+<h3>Datos de la serie</h3><div class="tw"><table><thead><tr><th>Año</th><th>País</th><th>Indicador</th><th>Dato</th><th>Unidad</th><th>Estado</th><th>Fuente</th></tr></thead><tbody id="htb"></tbody></table></div></section>
+
+<section id="met"><h2>Metodología</h2>
+<ul><li><b>Fuente y producto:</b> UN Comtrade Plus, HS 0603 (flores y capullos cortados), registro agregado World por país y flujo. No hay datos bilaterales Colombia–Chile.</li>
+<li><b>Datos:</b> valor y volumen de exportaciones e importaciones, en miles de USD y kg. Exportaciones FOB e importaciones CIF (2025: fobvalue y primaryValue).</li>
+<li><b>Cálculos propios:</b> saldo = exportaciones − importaciones (aproximado); razón = exportaciones ÷ importaciones; precio unitario = valor ÷ volumen (USD/kg); variación = ((valor ÷ valor de la observación anterior) − 1) × 100, de dos años salvo 2024→2025.</li>
+<li><b>Faltantes:</b> se muestran como «Sin dato», nunca como cero ni interpolados.</li></ul></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const CC={Colombia:["COL","var(--col)"],Chile:["CHL","var(--chl)"]};
+const cs=()=>["Colombia","Chile"].filter(c=>!$("fc").value||$("fc").value==c);
+const tp=document.createElement("div");tp.style.cssText="position:fixed;pointer-events:none;background:#12304f;color:#fff;padding:6px 10px;border-radius:6px;font:12px sans-serif;z-index:20;display:none;max-width:260px";document.body.appendChild(tp);
+document.addEventListener("mousemove",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t){tp.textContent=t.dataset.tip;tp.style.display="block";tp.style.left=Math.min(e.clientX+12,innerWidth-270)+"px";tp.style.top=e.clientY+12+"px"}else tp.style.display="none"});
+document.addEventListener("click",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t&&matchMedia("(hover:none)").matches){tp.textContent=t.dataset.tip;tp.style.display="block";tp.style.left="10px";tp.style.top=(e.clientY+14)+"px"}});
+const YR=[2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2025],N=null;
+const HD={Colombia:{vx:[703440.568,967037.234,1094474.569,1240481.434,1270007.459,1374245.753,1312261.768,1458170.48787,1410711.54012,2052280.33326,2347665.30766,2397315.35329],vm:[3212.724,5106.319,3516.799,4987.7,6032.643,3999.139,6946.813,5962.6197,6752.508339999999,21530.99817,17003.19311,17098.78487],qx:[191574656,223345567,221269435,220224214,201949067,222565695,234937675,257377035.105,247646446.223,316973443.185,329705583.73,339581020.16],qm:[715046,956048,555786,716311,575692,416170,670277,564611.19,654396.87,1922156.93,1607126.04,1729754.71]},Chile:{vx:[3862.82132,3150.55504,4018.51551,3650.06488,3321.65188,6050.580940000001,6955.981,6747.751,8962.79868,12567.68238,18245.509545,15605.13727],vm:[2090.142996,4905.032199,7900.982349999999,8877.911572,15591.546097,20197.470443,19506.544239,25098.251122,12406.14944,27272.479935,23670.88392,29787.57128],qx:[551035.07,394567.07,427964.77,260709.723,194802.79,285533.63,305111,330158,1044692.966,468599.43,723889.483,889832.129],qm:[606196.318,1217629.372,2086612.602,2524347.984,3511091.477,4334737.797,5133720.395,7372170.487,4556306.135,8797349.66,8173174.816,8837916.335]}};
+const IN={vx:['Valor de exportaciones','miles de USD','D'],qx:['Volumen de exportaciones','kg','D'],vm:['Valor de importaciones','miles de USD','D'],qm:['Volumen de importaciones','kg','D'],sb:['Saldo comercial sectorial (exportaciones − importaciones)','miles de USD','C'],ra:['Relación exportaciones/importaciones','razón','C'],px:['Precio unitario de exportación (derivado)','USD/kg','C'],pm:['Precio unitario de importación (derivado)','USD/kg','C']};
+const UC='https://comtradeplus.un.org/TradeFlow?Type=C&Frequency=A&Classification=HS&CommodityCodes=0603',UA=UC.replace(/&/g,'&amp;'),hs=new Set();
+Object.entries(IN).forEach(([k,v])=>$('hi').add(new Option(v[0],k)));YR.forEach(y=>{$('y0').add(new Option(y,y));$('y1').add(new Option(y,y))});$('y0').value=2004;$('y1').value=2025;
+function gv(c,k,i){const h=HD[c];if(k=='px'||k=='pm'){const a=h[k=='px'?'vx':'vm'][i],b=h[k=='px'?'qx':'qm'][i];return a==null||b==null?null:a*1000/b}if(k=='sb'||k=='ra'){const a=h.vx[i],b=h.vm[i];return a==null||b==null?null:k=='sb'?a-b:a/b}return h[k][i]}
+const nz=(v,k)=>v==null?'Sin dato':v.toLocaleString('es-CO',{maximumFractionDigits:k=='ra'||k[0]=='p'?2:k[0]=='q'?0:5});
+const tx=(t,q)=>`${t.c0} · ${q[0]} · ${IN[t.k][0]}: ${nz(q[1],t.k)} ${IN[t.k][1]} · ${es(t.k,q[0])} · HS 0603, UN Comtrade Plus`;
+function leg(id,S){$(id).innerHTML=S.map(s=>`<button data-n='${s.n}' aria-pressed='${!hs.has(s.n)}' style='border-left:8px solid ${s.c};margin:0 6px 6px 0'>${s.n}</button>`).join('')}
+function lc(id,S,o){const W=720,H=300,L=64,R=16,T=14,B=34,vis=S.filter(s=>!hs.has(s.n)),al=vis.flatMap(s=>s.p.filter(q=>q[1]!=null).map(q=>q[1])),el=$(id);
+if(!al.length){el.innerHTML="<p class='note'>No hay series visibles. Active una serie en la leyenda.</p>";return}
+const lg=o.lg&&al.every(v=>v>0),F=v=>lg?Math.log10(v):v;let fa,fb;
+if(lg){fa=Math.floor(F(Math.min(...al)));fb=Math.ceil(F(Math.max(...al)));if(fa==fb)fb++}else{fa=Math.min(0,...al);fb=Math.max(0,...al);if(fa==fb)fb=fa+1}
+const X=y=>L+(o.hi==o.lo?.5:(y-o.lo)/(o.hi-o.lo))*(W-L-R),Y=v=>T+(1-(F(v)-fa)/(fb-fa))*(H-T-B),cp=v=>v.toLocaleString('es-CO',{notation:'compact',maximumFractionDigits:2});
+let s='';const tk=[];if(lg){const st=Math.max(1,Math.ceil((fb-fa)/6));for(let e=fa;e<=fb;e+=st)tk.push(Math.pow(10,e))}else for(let i=0;i<=4;i++)tk.push(fa+(fb-fa)*i/4);
+tk.forEach(v=>{s+=`<line x1='${L}' x2='${W-R}' y1='${Y(v)}' y2='${Y(v)}' stroke='#9aa7b5' stroke-opacity='.3'/><text x='${L-6}' y='${Y(v)+4}' font-size='11' text-anchor='end' fill='currentColor'>${cp(v)}</text>`});
+if(!lg&&fa<0)s+=`<line x1='${L}' x2='${W-R}' y1='${Y(0)}' y2='${Y(0)}' stroke='currentColor' stroke-width='1.5'/>`;
+S[0].p.map(q=>q[0]).forEach(y=>{const none=vis.every(t=>{const q=t.p.find(r=>r[0]==y);return !q||q[1]==null});s+=`<text x='${X(y)}' y='${H-14}' font-size='11' text-anchor='middle' fill='currentColor'>${y}</text>`;if(none)s+=`<line x1='${X(y)}' x2='${X(y)}' y1='${T}' y2='${H-B}' stroke='#9aa7b5' stroke-dasharray='4 4'/><text x='${X(y)}' y='${T+12}' font-size='11' text-anchor='middle' fill='currentColor'>Sin dato</text>`});
+vis.forEach(t=>{let d='',pen=false;t.p.forEach(q=>{if(q[1]==null){pen=false;return}d+=(pen?'L':'M')+X(q[0])+' '+Y(q[1]);pen=true});
+s+=`<path d='${d}' fill='none' stroke='${t.c}' stroke-width='2.5' ${t.d?"stroke-dasharray='7 5'":''}/>`;
+t.p.forEach(q=>{if(q[1]==null)return;const det=tx(t,q);s+=`<circle cx='${X(q[0])}' cy='${Y(q[1])}' r='5' fill='${t.d?"var(--sf)":t.c}' stroke='${t.c}' stroke-width='2.5' tabindex='0' data-tip='${det}' data-det='${det}'/>`})});
+el.innerHTML=`<svg viewBox='0 0 ${W} ${H}' width='100%' role='img' aria-label='Gráfico de líneas'>${s}</svg>`}
+const es=(k,y)=>IN[k][2]=='D'?(y==2006||y==2025?'Dato original de UN Comtrade (archivos adjuntos '+y+')':'Dato descargado'):'Cálculo propio';
+Object.entries(IN).forEach(([k,v])=>{if(k!='sb'&&k!='ra')$('hv').add(new Option(v[0],k))});
+function vr(k,lo,hi){const cl=cs().filter(c=>!hs.has(c)),el=$('hc3'),ys=YR.map((y,i)=>i).filter(i=>i>0&&YR[i]>=lo&&YR[i]<=hi);
+if(!ys.length||!cl.length){el.innerHTML="<p class='note'>Elija un rango con al menos dos años de la serie y una serie visible.</p>";return}
+const dat=[];ys.forEach(i=>cl.forEach(c=>{const a=gv(c,k,i-1),b=gv(c,k,i);dat.push({c,i,a,b,p:a==null||b==null||a==0?null:(b/a-1)*100})}));
+const ps=dat.filter(d=>d.p!=null).map(d=>d.p),W=720,H=300,L=56,R=12,T=18,B=34,mx=Math.max(10,...ps),mn=Math.min(-10,...ps),Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B),bw=(W-L-R)/ys.length,f1=v=>v.toLocaleString('es-CO',{maximumFractionDigits:1});
+let s='';for(let t=0;t<=4;t++){const v=mn+(mx-mn)*t/4;s+=`<line x1='${L}' x2='${W-R}' y1='${Y(v)}' y2='${Y(v)}' stroke='#9aa7b5' stroke-opacity='.3'/><text x='${L-6}' y='${Y(v)+4}' font-size='11' text-anchor='end' fill='currentColor'>${v.toFixed(0)} %</text>`}
+s+=`<line x1='${L}' x2='${W-R}' y1='${Y(0)}' y2='${Y(0)}' stroke='currentColor' stroke-width='1.5'/>`;
+ys.forEach((i,j)=>{const x0=L+j*bw,w=bw*.7/cl.length;s+=`<text x='${x0+bw/2}' y='${H-14}' font-size='10' text-anchor='middle' fill='currentColor'>${YR[i-1]}→${YR[i]}</text>`;
+cl.forEach((c,m)=>{const d=dat.find(e=>e.i==i&&e.c==c),x=x0+bw*.15+m*w;
+if(d.p==null){s+=`<text x='${x+w/2}' y='${Y(0)-4}' font-size='9' text-anchor='middle' fill='currentColor'>Sin dato</text>`;return}
+const det=`${c} · ${YR[i-1]}→${YR[i]} · ${IN[k][0]}: ${d.p>=0?'▲ +':'▼ '}${f1(d.p)} % (de ${nz(d.a,k)} a ${nz(d.b,k)} ${IN[k][1]}) · cálculo propio, HS 0603, UN Comtrade Plus`;
+s+=`<rect x='${x}' y='${Math.min(Y(d.p),Y(0))}' width='${w}' height='${Math.max(1,Math.abs(Y(d.p)-Y(0)))}' fill='${CC[c][1]}' tabindex='0' data-tip='${det}' data-det='${det}'/><text x='${x+w/2}' y='${d.p>=0?Y(d.p)-3:Y(d.p)+11}' font-size='10' text-anchor='middle' fill='${d.p>=0?"var(--pos)":"var(--neg)"}'>${d.p>=0?'▲':'▼'}</text>`})});
+el.innerHTML=`<svg viewBox='0 0 ${W} ${H}' width='100%' role='img' aria-label='Variación bienal por país'>${s}</svg>`}
+function histo(){const k=$('hi').value,a=+$('y0').value,b=+$('y1').value,lo=Math.min(a,b),hi=Math.max(a,b),cl=cs(),lg=$('hl').checked&&k!='sb',rg=YR.map((y,i)=>i).filter(i=>YR[i]>=lo&&YR[i]<=hi);
+const mk=(c,kk,n,d)=>({n,c:CC[c][1],d,c0:c,k:kk,p:rg.map(i=>[YR[i],gv(c,kk,i)])}),S1=cl.map(c=>mk(c,k,c,0)),S2=cl.flatMap(c=>[mk(c,'vx',c+' exportaciones',0),mk(c,'vm',c+' importaciones',1)]);
+$('t1').textContent=IN[k][0]+' ('+IN[k][1]+')'+(lg?', escala logarítmica':'');leg('lg1',S1);leg('lg2',S2);lc('hc1',S1,{lo,hi,lg});lc('hc2',S2,{lo,hi,lg:$('hl').checked});leg('lg3',S1);vr($('hv').value,lo,hi);
+const sm=cl.map(c=>{const v=rg.map(i=>[YR[i],gv(c,k,i)]).filter(q=>q[1]!=null);if(v.length<2)return c+': datos insuficientes en el rango.';const p=v[0],q=v[v.length-1],ch=k=='sb'?'diferencia '+nz(q[1]-p[1],k)+' '+IN[k][1]:(p[1]>0?'variación '+((q[1]/p[1]-1)*100).toLocaleString('es-CO',{maximumFractionDigits:1})+' %':'variación no calculable');return `${c}: ${nz(p[1],k)} (${p[0]}) → ${nz(q[1],k)} (${q[0]}); ${ch}.`});
+$('hsum').innerHTML='<b>Entre los extremos disponibles del rango:</b> '+sm.join(' ')+' Es la variación entre dos observaciones, no una tasa anual ni una explicación de causas.';
+const ks=$('ha').checked?Object.keys(IN):[k],tr=[];cl.forEach(c=>ks.forEach(kk=>rg.forEach(i=>{const v=gv(c,kk,i);tr.push(`<tr><td>${YR[i]}</td><td><span class='cl' style='--c:${CC[c][1]}'>${c}</span></td><td>${IN[kk][0]}</td><td>${nz(v,kk)}</td><td>${IN[kk][1]}</td><td>${v==null?'Sin dato (faltante en el archivo)':es(kk,YR[i])}</td><td><a href='${UA}' target='_blank' rel='noopener'>UN Comtrade Plus</a></td></tr>`)})));$('htb').innerHTML=tr.join('')}
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-det]');if(t)$('hd').innerHTML='<b>Detalle:</b> '+t.dataset.det+'. <a href="'+UA+'" target="_blank" rel="noopener">Fuente: UN Comtrade Plus, HS 0603</a> (página general de consulta, no una tabla específica).';const g=e.target.closest&&e.target.closest('[data-n]');if(g){hs.has(g.dataset.n)?hs.delete(g.dataset.n):hs.add(g.dataset.n);histo()}});
+['hi','y0','y1','hl','ha','hv'].forEach(i=>$(i).addEventListener('change',histo));
+$('rs').addEventListener('click',()=>{hs.clear();$('hi').value='vx';$('y0').value=2004;$('y1').value=2025;$('hl').checked=true;$('ha').checked=false;histo()});
+$('fc').addEventListener('change',histo);
+$('rs').addEventListener('click',()=>{$('fc').value='';histo()});
+histo();
+</script></body></html>
